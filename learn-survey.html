@@ -19,15 +19,15 @@
             <form id="survey-form" action="" method="post">
                 <fieldset class="form-group">
                     <label id="name-label" for="name">Name <input class="form-control" name="name" id="name" type="text"
-                            placeholder="Enter your name"></label>
+                            placeholder="Enter your name" required></label>
                 </fieldset>
                 <fieldset class="form-group">
                     <label id="email-label" for="email">Email <input class="form-control" name="email" id="email"
-                            type="text" placeholder="Enter your Email"></label>
+                            type="email" placeholder="Enter your Email" required></label>
                 </fieldset>
                 <fieldset class="form-group">
                     <label id="number-label" for="number">Age<span class="clue">(optional)</span> <input
-                            class="form-control" name="age" id="number" min="16" max="100" type="text"
+                            class="form-control" name="age" id="number" min="16" max="100" type="number"
                             placeholder="Age"></label>
                 </fieldset>
                 <fieldset class="form-group">
@@ -88,7 +88,7 @@
                         placeholder="Enter your comment here..."></textarea>
                 </fieldset>
                 <fieldset class="form-group">
-                    <input class="input-button" type="submit" value="Submit" />
+                    <input id="submit" class="input-button" type="submit" value="Submit" />
                 </fieldset>
             </form>
         </section>
