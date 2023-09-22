@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Shishir">
+    <link rel="stylesheet" href="styles.css">
+    <title>Survey with Kunj</title>
+</head>
+
+<body>
+    <main class="main">
+        <header class="header">
+            <h1 id="title" class="text-center">Survey Form</h1>
+            <p id="description" class="description">Thank you for taking the time to help us improve the platform</p>
+        </header>
+        <section>
+            <form id="survey-form" action="" method="post">
+                <fieldset class="form-group">
+                    <label id="name-label" for="name">Name <input class="form-control" name="name" id="name" type="text"
+                            placeholder="Enter your name"></label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label id="email-label" for="email">Email <input class="form-control" name="email" id="email"
+                            type="text" placeholder="Enter your Email"></label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label id="number-label" for="number">Age<span class="clue">(optional)</span> <input
+                            class="form-control" name="age" id="number" min="16" max="100" type="text"
+                            placeholder="Age"></label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="option">Which option best describes your current role?
+                        <select class="form-control" name="option" id="dropdown">
+                            <option value disabled selected>Select current role</option>
+                            <option value="1">Student</option>
+                            <option value="2">Full Time Job</option>
+                            <option value="3">Full Time Learner</option>
+                            <option value="4">Prefer not to say</option>
+                            <option value="5">Other</option>
+                        </select>
+                    </label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <P>Would you recommend freeCodeCamp to a friend?</P>
+                    <label><input class="input-radio" type="radio" name="recommend" value="Definitely">
+                        Definitely</label>
+                    <label><input class="input-radio" type="radio" name="recommend" value="Maybe"> Maybe</label>
+                    <label><input class="input-radio" type="radio" name="recommend" value="NotSure">
+                        NotSureNotSure</label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="option1">What is your favorite feature of freeCodeCamp?
+                        <select class="form-control" name="option1" id="option1">
+                            <option value="" disabled selected>Select current role</option>
+                            <option value="1">Challenges</option>
+                            <option value="2">Project</option>
+                            <option value="3">Community</option>
+                            <option value="4">Open source</option>
+                        </select>
+                </fieldset>
+                <fieldset class="form-group">
+                    <p>What would you like to see improved? <span class="clue">(Check all that apply)</span></p>
+                    <label> <input class="input-check" value="Front-end Projects" type="checkbox" name="improve">
+                        Front-end Projects</label>
+                    <label> <input class="input-check" value="Back-end Projects" type="checkbox" name="improve">
+                        Back-end Projects</label>
+                    <label> <input class="input-check" value="Data Visualization" type="checkbox" name="improve"> Data
+                        Visualization</label>
+                    <label> <input class="input-check" value="Challenges" type="checkbox" name="improve">
+                        Challenges</label>
+                    <label> <input class="input-check" value="Open Source Community" type="checkbox" name="improve">
+                        Open Source Community</label>
+                    <label> <input class="input-check" value="Gitter help rooms" type="checkbox" name="improve"> Gitter
+                        help rooms</label>
+                    <label> <input class="input-check" value="Videos" type="checkbox" name="improve"> Videos</label>
+                    <label> <input class="input-check" value="City Meetups" type="checkbox" name="improve"> City
+                        Meetups</label>
+                    <label> <input class="input-check" value="Wiki" type="checkbox" name="improve"> Wiki</label>
+                    <label> <input class="input-check" value="Forum" type="checkbox" name="improve"> Forum</label>
+                    <label> <input class="input-check" value="Additional Courses" type="checkbox" name="improve">
+                        Additional Courses</label>
+                </fieldset>
+                <fieldset class="form-group">
+                    <P>Any comments or suggestions?</P>
+                    <textarea class="input-area" id="comments" name="comments" rows="3" cols="30"
+                        placeholder="Enter your comment here..."></textarea>
+                </fieldset>
+                <fieldset class="form-group">
+                    <input class="input-button" type="submit" value="Submit" />
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
