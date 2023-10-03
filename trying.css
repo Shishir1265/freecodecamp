@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+.menu-bar-button{
+    --button-color:#000;
+    overflow: hidden;
+    background-color: transparent;
+    border-radius: 2.5em;
+    border: 8.5px solid var(--button-color, #000);
+
+    .line{
+        transition: 700ms;
+        stroke-dasharray: 65 44.2 65 200;
+    }
+    &:hover .line{
+        stroke-dasharray: 67 99 65 200;
+        stroke-dashoffset: -107;
+    }
+    .hamburger{
+        transition: translate 800ms, rotate 730ms;
+    }
+    &:hover .hamburger{
+        translate: 19px -16px;
+        rotate: 0.122turn;
+    }
+}

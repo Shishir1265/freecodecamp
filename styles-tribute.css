@@ -1,47 +1,55 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     scroll-behavior: smooth;
-
 }
 
-.nav-bar{
-    width:100%;
+.nav-bar {
+    width: 100%;
     display: flex;
     height: 60px;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     z-index: 99;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-    background-color: rgba(0,0,0,0.5);
-    
-    #checkbox-1{
+    font-family: 'Roboto Mono', monospace;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+
+    #checkbox-1,.menu-bar {
         display: none;
     }
 
-    i{
+    i {
         color: whitesmoke;
         cursor: pointer;
+        transition: all 130ms ease-in;
     }
 
-    .logo{
-        flex:1.4;
+    li i:hover {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transform: scale(1.15);
+    }
+
+    .logo {
+        flex: 1.4;
         /* max-width: 500px; */
         color: whitesmoke;
-        font-size: 43px;
+        font-size: 44px;
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
         margin-left: 25px;
         font-weight: bold;
     }
 
-    .search-bar{
-        /* flex: 1; */
+    .search-bar {
         --size: 38px;
-        max-width:300px;
+        max-width: 300px;
         display: flex;
         border: 2px solid whitesmoke;
         border-radius: 20px;
@@ -49,32 +57,33 @@ body{
         width: var(--size);
         position: relative;
         overflow: hidden;
-        transition: width 1.6s cubic-bezier(.69,-0.16,.24,1.17);
+        transition: width 1.4s cubic-bezier(.69, -0.16, .24, 1.17);
 
-        .search-bar-input{
-            flex:1;
+        .search-bar-input {
+            flex: 1;
             font-size: 15px;
-            color:white;
+            color: white;
             width: 270px;
             border: 0;
             padding: 0 20px;
             height: 35px;
             background: transparent;
             position: absolute;
-            top:0;
+            top: 0;
             bottom: 0;
-            left:0;
+            left: 0;
             opacity: 0;
             transition-delay: 400ms;
             cursor: pointer;
 
-            &:focus{
+            &:focus {
                 outline: 0;
             }
-            
+
         }
-        .search-bar-submit{
-            font-size:1em;
+
+        .search-bar-submit {
+            font-size: 1em;
             cursor: pointer;
             border: 0;
             background: pink;
@@ -85,50 +94,79 @@ body{
             margin-left: auto;
             transition: all 450ms ease-in-out;
 
-            i{
+            i {
                 color: whitesmoke;
             }
 
-            &:focus,&:hover{
-                outline:0;
-                box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            &:focus,
+            &:hover {
+                outline: 0;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             }
         }
 
-        &:focus-within{
-            width:100%;
-            .search-bar-input{
-                opacity:1;
-                cursor:initial;
+        &:focus-within {
+            width: 100%;
+
+            .search-bar-input {
+                opacity: 1;
+                cursor: initial;
             }
-            .search-bar-submit{
+
+            .search-bar-submit {
                 background-color: whitesmoke;
-                i{
+
+                i {
                     color: pink;
                 }
             }
         }
     }
 
-    .nav-ul{
-        flex:1.5;
-        max-width:500px;
+    .nav-ul {
+        flex: 1.5;
+        max-width: 500px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
 
-        li{
+        li {
             list-style: none;
 
-            a{
+            a {
                 text-decoration: none;
                 color: whitesmoke;
                 font-weight: 500;
             }
 
-            i{
+            i {
                 margin: 0 10px;
             }
         }
     }
+
+    .menu-bar-button{
+        --button-color:#333;
+        overflow: hidden;
+        background-color: transparent;
+        border-radius: 1em;
+        border: 9px solid var(--button-color, #000);
+    
+        .line{
+            transition: 700ms;
+            stroke-dasharray: 65 44.2 65 200;
+        }
+        &:hover .line{
+            stroke-dasharray: 67 99 65 200;
+            stroke-dashoffset: -107;
+        }
+        .hamburger{
+            transition: translate 1s, rotate 1s;
+        }
+        &:hover .hamburger{
+            translate: 16px -16px;
+            rotate: 0.122turn;
+        }
+    }
 }
+
