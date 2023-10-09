@@ -5,21 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles-tribute.css">
+    <script defer src="lol.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title id="Norman-Borlaug">Dr. Norman Borlaug</title>
+
 </head>
 
 <body>
     <div class="container">
         <header class="header">
             <nav class="nav-bar">
-                <input type="checkbox" name="" id="checkbox-1">
                 <div class="logo">Lazypan</div>
                 <div class="search-bar">
                     <input type="text" class="search-bar-input" placeholder="Enter your search" aria-label="search">
                     <button class="search-bar-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
-                <div class="nav-ul">
+                <div class="nav-ul" data-visible="false">
                     <a href="#" class="animate-link">
                         <span class="hidden">HOME</span>
                         <span class="animate-link-tr">
@@ -52,19 +53,16 @@
                             class="fa-brands fa-linkedin fa-2xl lol"></i></a>
                 </div>
                 <div class="menu-bar">
-                    <label for="checkbox-1">
-                        <button class="menu-bar-button">
-                            <svg fill="var(--button-color)" class="hamburger" viewBox="0 0 100 100" fill="none"
-                                width="200">
-                                <path class="line" stroke-width="9.5"
-                                    d="m 17 36 h 65 a 1 1 0 0 1 0 28 h -65 a 30 30 10 0 1 0 -46 h 34 v 82"
-                                    stroke="var(--button-color)" stroke-linecap="round" stroke-linejoin="round"
-                                    fill="none">
-                                </path>
-                            </svg>
-                        </button>
-                    </label>
-                </div>
+                    <button class="menu-bar-button" aria-controls="nav-ul" aria-expanded="false">
+                        <svg fill="var(--button-color)" class="hamburger" viewBox="0 0 100 100" fill="none" width="24"
+                            height="22">
+                            <path class="line" stroke-width="10.5"
+                                d="m 17 36 h 65 a 1 1 0 0 1 0 28 h -65 a 30 30 10 0 1 0 -46 h 34 v 82"
+                                stroke="var(--button-color)" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                            </path>
+                        </svg>
+                    </button>
+                 </div>
             </nav>
         </header>
         <main class="main">
