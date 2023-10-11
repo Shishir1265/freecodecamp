@@ -1,0 +1,280 @@
+:root {
+    font-size: 17vmin;
+
+    --outlines: transparent;
+
+    --speed: 0.8s;
+    --delay-gap: 8;
+
+    --horse-width: 5rem;
+    --horse-height: 2.7rem;
+
+    /* //dark horse */
+    --color-horse: rgba(50, 50, 50, 1);
+    --color-horse-back: rgba(30, 30, 30, 1);
+    --color-hair: rgba(70, 70, 70, 1);
+
+    /* //white horse
+	// --color-horse: rgba(240, 240, 240, 1);
+	// --color-horse-back: rgba(200, 200, 200, 1);
+	// --color-hair: rgba(255, 255, 255, 1);
+
+	//pink horse
+	// --color-horse: #D72287;
+	// --color-horse-back: #9A095A;
+	// --color-hair: #DF4E9F;
+
+	//red horse
+	// --color-horse: #FF0000;
+	// --color-horse-back: #DD0000;
+	// --color-hair: #FF3030;
+
+	//blue horse
+	// --color-horse: #0000ff;
+	// --color-horse-back: #0000dd;
+	// --color-hair: #3030ff; */
+
+    --color-hoof: rgba(0, 0, 0, 1);
+    --color-dust: #af540b;
+    --color-floor: #f1d1af;
+    --color-sky: #c4c4ff;
+}
+
+input[type="checkbox"] {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked~label {
+    --outlines: white;
+    --speed: 8s;
+
+    --color-horse: rgba(50, 50, 50, 0.3);
+    --color-horse-back: rgba(30, 30, 30, 0.3);
+    --color-hair: rgba(70, 70, 70, 0.3);
+    --color-hoof: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    position: relative;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(0deg,
+            rgba(255, 164, 78, 1) 30%,
+            rgba(0, 212, 255, 1) 100%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    top: 80%;
+}
+
+.img {
+    position: absolute;
+    z-index: 9999;
+    opacity: 0.5;
+    top: 260px;
+}
+
+.floor {
+    background-color: var(--color-floor);
+    background: linear-gradient(9deg, rgba(232, 217, 190, 1) 0%, #a95108 75%);
+    position: fixed;
+    top: calc(50vh + (var(--horse-height) / 2) - 0.5rem);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.cheetah {
+    background: black;
+    width: var(--horse-width);
+    height: var(--horse-height);
+    border: 0px solid var(--outlines);
+}
+
+.cheetah *,
+.cheetah *:after,
+.cheetah *:before {
+    border: 1px dashed var(--outlines);
+}
+
+.cheetah * {
+    position: absolute;
+    top: var(--part-y, 0);
+    left: var(--part-x, 0);
+    width: var(--part-width, 10px);
+    height: var(--part-height, 10px);
+    border-radius: var(--part-radius, 0);
+    transform: rotate(var(--part-rotate, 0deg));
+    transform-origin: var(--part-origin, 50% 50%);
+
+    animation-delay: var(--delay, 0s) !important;
+}
+
+.cheetah * *,
+.cheetah * *:after,
+.cheetah * *:before {
+    position: absolute;
+    background-color: var(--color-horse);
+    top: var(--shape-y, 0);
+    left: var(--shape-x, 0);
+    width: var(--shape-width, 10px);
+    height: var(--shape-height, 10px);
+    border-radius: var(--shape-radius, 0);
+    transform: rotate(var(--shape-rotate, 0deg));
+    transform-origin: var(--shape-origin, 50% 50%);
+    animation-delay: var(--delay, 0s) !important;
+}
+
+.front-leg {
+    --part-width: 15%;
+    --part-height: 60%;
+    --part-x: 28%;
+    --part-y: 59%;
+    --part-origin: 50% 0%;
+    --part-rotate: 64deg;
+    border: none;
+}
+
+.front-leg .shoulder {
+    --shape-x: 8%;
+    --shape-width: 77%;
+    --shape-height: 15%;
+    --shape-origin: 100% 50%;
+    --shape-radius: 30% 30% 69% 15%;
+    --shape-rotate: -0deg;
+}
+
+
+.front-leg .upper {
+    --shape-x: 36%;
+    --shape-y: 65%;
+    --shape-width: 25%;
+    --shape-height: 157%;
+    --shape-origin: 50% 0%;
+    --shape-radius: 30% 30% 50% 100%;
+    --shape-rotate: -8deg;
+}
+
+.front-leg .upper:before {
+    content: "";
+    --shape-x: 120%;
+    --shape-y: 1%;
+    --shape-width: 85%;
+    --shape-height: 100%;
+    --shape-radius: 20% 10% 20% 20%;
+    --shape-rotate: 15deg;
+}
+
+
+/* .front-leg .upper:after {
+	content: "";
+	--shape-x: 40%;
+	--shape-y: 60%;
+	--shape-height: 78%;
+	--shape-radius: 40%;
+	--shape-rotate: 5deg;
+} */
+
+.front-leg .knee {
+    --shape-x: 10%;
+    --shape-y: 80%;
+    --shape-width: 111%;
+    --shape-height: 35%;
+    --shape-radius: 5% 45% 45% 45%;
+    --shape-origin: 40% 20%;
+    --shape-rotate: -0deg;
+}
+
+/* .front-leg .knee:before {
+	content: "";
+	--shape-x: 0%;
+	--shape-y: 60%;
+	--shape-width: 30%;
+	--shape-height: 40%;
+	--shape-radius: 30%;
+	--shape-rotate: 0deg;
+} */
+
+.front-leg .lower {
+    --shape-x: -12%;
+    --shape-y: 68%;
+    --shape-width: 45%;
+    --shape-height: 200%;
+    --shape-radius: 30% 50% 50% 20%;
+    --shape-rotate: 12deg;
+}
+
+.front-leg .lower:before {
+    content: '';
+    --shape-x: 100%;
+    --shape-y: -17%;
+    --shape-width: 90%;
+    --shape-height: 124%;
+    --shape-radius: 30% 30% 30% 20%;
+    --shape-rotate: 12deg;
+}
+
+.front-leg .ankle {
+    --shape-x: -8%;
+    --shape-y: 80%;
+    --shape-width: 155%;
+    --shape-height: 36%;
+    --shape-radius: 50%;
+    --shape-rotate: 20deg;
+}
+
+.front-leg .much-lower {
+    --shape-x: -22%;
+    --shape-y: 113%;
+    --shape-width: 155%;
+    --shape-height: 58%;
+    --shape-radius: 50% 50% 50% 30%;
+    --shape-rotate: 90deg;
+}
+
+.front-leg .much-lower::before {
+    content: '';
+    --shape-x: 4%;
+    --shape-y: -140%;
+    --shape-width: 100%;
+    --shape-height: 122%;
+    --shape-radius: 50% 20% 50% 30%;
+    --shape-rotate: 10deg;
+}
+
+/*
+.front-leg .foot {
+	--shape-x: -35%;
+	--shape-y: 65%;
+	--shape-width: 120%;
+	--shape-height: 200%;
+	--shape-radius: 0%;
+	--shape-rotate: 30deg;
+
+	clip-path: polygon(
+		0% 0%,
+		80% 0%,
+		65% 20%,
+		63% 30%,
+		70% 45%,
+		75% 55%,
+		46% 90%,
+		35% 95%,
+		10% 70%,
+		5% 50%,
+		10% 25%
+	);
+}
