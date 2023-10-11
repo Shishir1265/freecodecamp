@@ -188,33 +188,36 @@ body {
             }
         }
 
-
     }
 
-    .menu-bar-button {
-        --button-color: #000;
-        overflow: hidden;
-        background-color: transparent;
-        border-radius: 6px;
-        border: 2px solid var(--button-color, #000);
+    .menu-bar {
+        .menu-bar-button {
+            --button-color: #000;
+            overflow: hidden;
+            background-color: transparent;
+            border-radius: 6px;
+            border: 2px solid var(--button-color, #000);
 
-        .line {
-            transition: 700ms;
-            stroke-dasharray: 65 44.2 65 200;
+            .line {
+                transition: 700ms;
+                stroke-dasharray: 65 44.2 65 200;
+            }
+
+            .hamburger {
+                transition: translate 800ms, rotate 730ms;
+            }
         }
 
-        &:hover .line {
-            stroke-dasharray: 67 99 65 200;
-            stroke-dashoffset: -107;
-        }
+        .menu-bar-button[data-click="true"] {
+            .line {
+                stroke-dasharray: 67 99 65 200;
+                stroke-dashoffset: -107;
+            }
 
-        .hamburger {
-            transition: translate 800ms, rotate 730ms;
-        }
-
-        &:hover .hamburger {
-            translate: 2px -0.5px;
-            rotate: 0.124turn;
+            .hamburger {
+                translate: 2px -0.5px;
+                rotate: 0.124turn;
+            }
         }
     }
 }
