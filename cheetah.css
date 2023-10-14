@@ -98,7 +98,6 @@ body {
 }
 
 .cheetah {
-    background: black;
     width: var(--horse-width);
     height: var(--horse-height);
     border: 0px solid var(--outlines);
@@ -138,6 +137,12 @@ body {
     animation-delay: var(--delay, 0s) !important;
 }
 
+/* ================
+
+   FRONT LEG
+
+   ================ */
+
 .front-leg {
     --part-width: 15%;
     --part-height: 60%;
@@ -153,16 +158,17 @@ body {
     --shape-width: 77%;
     --shape-height: 15%;
     --shape-origin: 100% 50%;
-    --shape-radius: 30% 30% 69% 15%;
+    --shape-radius: 30% 30% 69% 10%;
     --shape-rotate: -0deg;
+    background: transparent;
+    border: none;
 }
 
-
 .front-leg .upper {
-    --shape-x: 36%;
-    --shape-y: 65%;
-    --shape-width: 25%;
-    --shape-height: 157%;
+    --shape-x: 30%;
+    --shape-y: 77%;
+    --shape-width: 29%;
+    --shape-height: 180%;
     --shape-origin: 50% 0%;
     --shape-radius: 30% 30% 50% 100%;
     --shape-rotate: -8deg;
@@ -172,56 +178,36 @@ body {
     content: "";
     --shape-x: 120%;
     --shape-y: 1%;
-    --shape-width: 85%;
+    --shape-width: 74%;
     --shape-height: 100%;
     --shape-radius: 20% 10% 20% 20%;
     --shape-rotate: 15deg;
 }
 
-
-/* .front-leg .upper:after {
-	content: "";
-	--shape-x: 40%;
-	--shape-y: 60%;
-	--shape-height: 78%;
-	--shape-radius: 40%;
-	--shape-rotate: 5deg;
-} */
-
 .front-leg .knee {
     --shape-x: 10%;
-    --shape-y: 80%;
-    --shape-width: 111%;
-    --shape-height: 35%;
+    --shape-y: 78%;
+    --shape-width: 118%;
+    --shape-height: 38%;
     --shape-radius: 5% 45% 45% 45%;
     --shape-origin: 40% 20%;
     --shape-rotate: -0deg;
 }
-
-/* .front-leg .knee:before {
-	content: "";
-	--shape-x: 0%;
-	--shape-y: 60%;
-	--shape-width: 30%;
-	--shape-height: 40%;
-	--shape-radius: 30%;
-	--shape-rotate: 0deg;
-} */
 
 .front-leg .lower {
     --shape-x: -12%;
     --shape-y: 68%;
     --shape-width: 45%;
     --shape-height: 200%;
-    --shape-radius: 30% 50% 50% 20%;
+    --shape-radius: 0% 50% 50% 20%;
     --shape-rotate: 12deg;
 }
 
 .front-leg .lower:before {
     content: '';
-    --shape-x: 100%;
-    --shape-y: -17%;
-    --shape-width: 90%;
+    --shape-x: 85%;
+    --shape-y: -19%;
+    --shape-width: 109%;
     --shape-height: 124%;
     --shape-radius: 30% 30% 30% 20%;
     --shape-rotate: 12deg;
@@ -229,18 +215,18 @@ body {
 
 .front-leg .ankle {
     --shape-x: -8%;
-    --shape-y: 80%;
-    --shape-width: 155%;
+    --shape-y: 86%;
+    --shape-width: 122%;
     --shape-height: 36%;
     --shape-radius: 50%;
-    --shape-rotate: 20deg;
+    --shape-rotate: -7deg;
 }
 
 .front-leg .much-lower {
     --shape-x: -22%;
     --shape-y: 113%;
     --shape-width: 155%;
-    --shape-height: 58%;
+    --shape-height: 49%;
     --shape-radius: 50% 50% 50% 30%;
     --shape-rotate: 90deg;
 }
@@ -255,26 +241,652 @@ body {
     --shape-rotate: 10deg;
 }
 
-/*
-.front-leg .foot {
-	--shape-x: -35%;
-	--shape-y: 65%;
-	--shape-width: 120%;
-	--shape-height: 200%;
-	--shape-radius: 0%;
-	--shape-rotate: 30deg;
-
-	clip-path: polygon(
-		0% 0%,
-		80% 0%,
-		65% 20%,
-		63% 30%,
-		70% 45%,
-		75% 55%,
-		46% 90%,
-		35% 95%,
-		10% 70%,
-		5% 50%,
-		10% 25%
-	);
+.front-leg .hoof {
+    --shape-x: 105%;
+    --shape-y: -8%;
+    --shape-rotate: 91deg;
+    --shape-width: 34%;
+    --shape-height: 91%;
+    --shape-radius: 50% 30% 35% 50%;
 }
+
+.front-leg .hoof::before {
+    content: '';
+    --shape-x: -12%;
+    --shape-y: -20%;
+    --shape-width: 106%;
+    --shape-height: 106%;
+    --shape-radius: 50% 30% 35% 50%;
+    --shape-rotate: 124deg;
+}
+
+.front-leg .hoof::after {
+    content: '';
+    --shape-x: -108%;
+    --shape-y: 40%;
+    --shape-width: 95%;
+    --shape-height: 131%;
+    --shape-radius: 50% 50% 15% 50%;
+    --shape-rotate: 21deg;
+}
+
+.front-leg.left {
+
+    .upper {
+        --shape-rotate: -121deg;
+    }
+
+    .knee {
+        --shape-rotate: 114deg;
+    }
+
+    .lower {
+        --shape-height: 222%;
+        --shape-width: 48%;
+    }
+
+    .ankle {
+        --shape-rotate: -89deg;
+    }
+}
+
+.front-leg.right {
+    --color-horse: var(--color-horse-back);
+    --delay: calc(0s - var(--speed) / var(--delay-gap));
+
+    .shoulder {
+        --shape-x: -1%;
+        --shape-width: 71%;
+        --shape-height: 16%;
+    }
+
+    .upper {
+        --shape-rotate: -61deg;
+        --shape-y: 71%;
+    }
+
+    .knee {
+        --shape-x: 33%;
+        --shape-rotate: 65deg;
+    }
+
+    .lower {
+        --shape-height: 220%;
+    }
+
+    .much-lower {
+        --shape-y: 104%;
+    }
+
+    .much-lower::before {
+        --shape-y: -104%;
+    }
+}
+
+/* ================
+
+   BACK LEG
+
+   ================ */
+
+.back-leg {
+    --part-width: 18%;
+    --part-height: 62%;
+    --part-x: 47%;
+    --part-y: 56%;
+    --part-origin: 50% 0%;
+    --part-rotate: -64deg;
+    border: none;
+}
+
+.back-leg .top {
+    --shape-height: 14%;
+    --shape-width: 69%;
+    --shape-radius: 45% 45% 35% 60%;
+    --shape-rotate: 32deg;
+    --shape-x: 13%;
+    --shape-y: 6%;
+}
+
+.back-leg .thigh {
+    --shape-height: 233%;
+    --shape-width: 37%;
+    --shape-radius: 50%;
+    --shape-rotate: 20deg;
+    --shape-x: 75%;
+    --shape-y: -7%;
+    --shape-origin: 50% 0%;
+}
+
+.back-leg .thigh::before {
+    content: ' ';
+    --shape-height: 151%;
+    --shape-width: 118%;
+    --shape-radius: 50%;
+    --shape-rotate: -59deg;
+    --shape-x: -247%;
+    --shape-y: 42%;
+    --shape-origin: 50% 0%;
+}
+
+.back-leg .lower-leg {
+    --shape-height: 45%;
+    --shape-width: 64%;
+    --shape-radius: 50%/10% 0%;
+    --shape-rotate: -82deg;
+    --shape-x: 60%;
+    --shape-y: 112%;
+    --shape-origin: 50% 0%;
+}
+
+.back-leg .lower-leg:after {
+    content: '';
+    --shape-height: 109%;
+    --shape-width: 268%;
+    --shape-radius: 50% / 40%;
+    --shape-rotate: -30deg;
+    --shape-x: 53%;
+    --shape-y: -12%;
+    --shape-origin: 60% 0%;
+    background-color: transparent;
+    box-shadow: -7px -12px 0px 0px var(--color-horse);
+}
+
+.back-leg .back-ankle {
+    --shape-height: 91%;
+    --shape-width: 134%;
+    --shape-radius: 50%;
+    --shape-rotate: 0deg;
+    --shape-x: -18%;
+    --shape-y: 73%;
+    --shape-origin: 50% 0%;
+}
+
+.back-leg .foot {
+    --shape-x: -100%;
+    --shape-y: 100%;
+    --shape-width: 119%;
+    --shape-height: 58%;
+    --shape-radius: 60% 0% 10% 0%;
+    --shape-rotate: -60deg;
+}
+
+.back-leg .foot::before {
+    content: '';
+    --shape-height: 79%;
+    --shape-width: 108%;
+    --shape-radius: 20% 45% 50% 10%;
+    --shape-rotate: -24deg;
+    --shape-x: -62%;
+    --shape-y: 12%;
+    --shape-origin: 50% 0%;
+}
+
+.back-leg .hoof {
+    --shape-x: -86%;
+    --shape-y: 61%;
+    --shape-width: 44%;
+    --shape-height: 107%;
+    --shape-radius: 50% 20% 50% 50%;
+    --shape-rotate: 0deg;
+}
+
+.back-leg .hoof::before {
+    content: '';
+    --shape-x: -40%;
+    --shape-y: 34%;
+    --shape-width: 82%;
+    --shape-height: 154%;
+    --shape-radius: 50% 30% 30% 100%;
+    --shape-rotate: 28deg;
+}
+
+.back-leg .hoof::after {
+    content: '';
+    --shape-x: -66%;
+    --shape-y: 86%;
+    --shape-width: 100%;
+    --shape-height: 73%;
+    --shape-radius: 50% 50% 100% 0%;
+    --shape-rotate: 0deg;
+}
+
+.back-leg.right {
+    --color-horse: var(--color-horse-back);
+    --delay: calc(0s - var(--speed) / var(--delay-gap));
+    --part-rotate: -61deg;
+
+    .top {
+        --shape-y: 2%;
+        --shape-x: 9%;
+        --shape-rotate: 52deg;
+    }
+
+    .foot::before {
+        --shape-x: -13%;
+        --shape-y: 5%;
+        --shape-rotate: -5deg;
+    }
+
+    .hoof {
+        --shape-x: -30%;
+        --shape-y: 31%;
+        --shape-rotate: 33deg;
+    }
+
+    .back-ankle {
+        --shape-rotate: -8deg;
+        --shape-x: -18%;
+        --shape-y: 73%;
+    }
+
+}
+
+/* ================
+
+   TAIL
+
+   ================ */
+
+.tail {
+    --part-width: 32%;
+    --part-height: 23%;
+    --part-x: 62%;
+    --part-y: 37%;
+    --part-rotate: 0deg;
+    --part-origin: 0% 50%;
+    border: none;
+}
+
+.tail .nub {
+    --shape-width: 11%;
+    --shape-height: 24%;
+    --shape-x: -3%;
+    --shape-y: 51%;
+    --shape-rotate: 0deg;
+    --shape-origin: 0% 50%;
+    --shape-radius: 50%;
+}
+
+.tail .nub::after {
+    content: '';
+    --shape-width: 47%;
+    --shape-height: 51%;
+    --shape-x: 813%;
+    --shape-y: -157%;
+    --shape-rotate: 0deg;
+    --shape-origin: 0% 50%;
+    --shape-radius: 50%;
+    background-color: var(--color-hair);
+}
+
+.tail .section {
+    --shape-width: 250%;
+    --shape-height: 265%;
+    --shape-rotate: 0deg;
+    --shape-origin: 0% 50%;
+    --shape-radius: 0%;
+    --shape-y: -151%;
+    --shape-x: 49%;
+    clip-path: polygon(-9.93% 57.29%, 15.72% 44.16%, 43.88% 35.74%, 68.88% 35.75%, 95.05% 42.06%, 100.41% 66.31%, 73.18% 59.59%, 45.97% 60.03%, 19.95% 68.98%, 10.79% 62.98%);
+    background-color: var(--color-hair);
+}
+
+.tail .section1 {
+    --shape-width: 250%;
+    --shape-height: 284%;
+    --shape-rotate: 0deg;
+    --shape-origin: 0% 50%;
+    --shape-radius: 0%;
+    --shape-y: -92%;
+    --shape-x: 292%;
+    clip-path: polygon(-1.58% 18.28%, 21.98% 26.83%, 43.89% 35.73%, 92.96% 59.39%, 94.15% 81.34%, 66.92% 70.42%, 41.8% 57.86%, 28.3% 51.65%, -1.72% 40.62%);
+    background-color: var(--color-hair);
+}
+
+.tail .section2 {
+    --shape-width: 328%;
+    --shape-height: 284%;
+    --shape-rotate: 0deg;
+    --shape-origin: 0% 50%;
+    --shape-radius: 0%;
+    --shape-y: 23%;
+    --shape-x: 528%;
+    clip-path: polygon(1.64% 18.28%, 17.16% 24.66%, 37.47% 22.73%, 60.01% 14.67%, 77.54% -3.46%, 81.30% 20.68%, 71.61% 30.17%, 62.1% 35.75%, 40.3% 42.97%, 15% 44.17%, -1.72% 40.62%);
+    background-color: var(--color-hair);
+}
+
+.tail .section3 {
+    --shape-width: 280%;
+    --shape-height: 350%;
+    --shape-rotate: 0deg;
+    --shape-origin: 0% 50%;
+    --shape-radius: 0%;
+    --shape-y: -198%;
+    --shape-x: 700%;
+    clip-path: polygon(12.87% 78.55%, 28.39% 60.11%, 35.60% 42.23%, 37.54% 21.77%, 55.07% 17.82%, 58.57% 27.76%, 54.61% 48.15%, 47.79% 64.24%, 37.48% 77.85%, 3.9% 92.02%);
+    background-color: var(--color-hair);
+}
+
+/* ================
+
+   BODY
+
+   ================ */
+
+.body {
+    --part-width: 40%;
+    --part-height: 33%;
+    --part-x: 27%;
+    --part-y: 42%;
+    --part-origin: 10% 50%;
+    border: none;
+}
+
+.body .section {
+    --shape-width: 76%;
+    --shape-height: 83%;
+    --shape-x: 35%;
+    --shape-y: 16%;
+    --shape-origin: 10% 30%;
+    --shape-radius: 50% 42% 20% 20%;
+    --shape-rotate: -15deg;
+}
+
+.body .section>*>* {
+    --shape-height: 90%;
+    --shape-x: 47%;
+    --shape-y: 12%;
+    --shape-radius: 50% 67% 20% 49%;
+    --shape-rotate: -8deg;
+}
+
+.body .section>*>*>* {
+    --shape-width: 105%;
+    --shape-height: 92%;
+    --shape-x: 58%;
+    --shape-y: 7%;
+    --shape-radius: 14% 215% 20% 20%;
+    --shape-rotate: 10deg;
+}
+
+.body .section>*>*>*>* {
+    --shape-width: 94%;
+    --shape-height: 94%;
+    --shape-x: 36%;
+    --shape-y: 4%;
+    --shape-origin: 10% 30%;
+    --shape-radius: 0% 42% 20% 20%;
+    --shape-rotate: 6deg;
+}
+
+.body>.section {
+    --shape-width: 29%;
+    --shape-height: 67%;
+    --shape-x: 16%;
+    --shape-y: 21%;
+    --shape-origin: 10% 30%;
+    --shape-radius: 50% /40%;
+    --shape-rotate: 0deg;
+}
+
+.body>.section:after {
+    content: "";
+    --shape-height: 58%;
+    --shape-width: 143%;
+    --shape-x: 130%;
+    --shape-y: 13%;
+    --shape-rotate: -17deg;
+    --shape-origin: 0% 100%;
+    --shape-radius: 50% / 40% 60%;
+}
+
+/* ================
+
+   NECK
+
+   ================ */
+
+.neck {
+    --part-width: 18%;
+    --part-height: 25%;
+    --part-x: 25%;
+    --part-y: 35%;
+    --part-origin: 0% 50%;
+    --part-rotate: 0DEG;
+    border: none;
+}
+
+.neck .under {
+    --shape-height: 42%;
+    --shape-width: 25%;
+    --shape-radius: 50%;
+    --shape-x: 7%;
+    --shape-y: 63%;
+    --shape-rotate: 9deg;
+    background-color: transparent;
+    border-top: 0.07rem outset var(--color-horse);
+}
+
+.neck .front {
+    --shape-width: 63%;
+    --shape-height: 34%;
+    --shape-radius: 50%/20%;
+    --shape-y: 39%;
+    --shape-x: 24%;
+    --shape-rotate: 22deg;
+    border-bottom-left-radius: 52%;
+}
+
+.neck .front::before {
+    content: '';
+    --shape-width: 102%;
+    --shape-height: 103%;
+    --shape-radius: 10% 30% 69% 10%;
+    --shape-y: 150%;
+    --shape-x: 11%;
+    --shape-rotate: 26deg;
+    border-bottom-left-radius: 52%;
+}
+
+.neck .base {
+    --shape-width: 34%;
+    --shape-height: 31%;
+    --shape-x: 26%;
+    --shape-y: 48%;
+    --shape-radius: 30%;
+    --shape-rotate: 36deg;
+}
+
+/* ================
+
+   HEAD
+
+   ================ */
+
+.head {
+    --part-width: 17%;
+    --part-height: 21%;
+    --part-x: 17.6%;
+    --part-y: 31%;
+    --part-origin: 100% 50%;
+    --part-rotate: -25deg;
+    border: none;
+}
+
+.head .skull {
+    --shape-width: 49%;
+    --shape-height: 42%;
+    --shape-radius: 50%;
+    --shape-x: 20%;
+    --shape-y: 36%;
+    --shape-rotate: 6deg;
+}
+
+.head .eye {
+    background-color: var(--color-horse-back);
+    --shape-width: 6%;
+    --shape-height: 10%;
+    --shape-radius: 30% 100%;
+    --shape-x: 45%;
+    --shape-y: 20%;
+    --shape-rotate: 0deg;
+}
+
+.head .face {
+    --shape-width: 26%;
+    --shape-height: 22%;
+    --shape-radius: 50% /30%;
+    --shape-y: 15%;
+    --shape-x: 34%;
+    --shape-rotate: 1deg;
+}
+
+.head .nose {
+    --shape-x: 15%;
+    --shape-y: 28.7%;
+    --shape-width: 20%;
+    --shape-height: 11%;
+    --shape-radius: 50%/30%;
+    --shape-rotate: -12deg;
+}
+
+.head .jaw {
+    --shape-rotate: 0deg;
+    --shape-x: 16%;
+    --shape-y: 53%;
+    --shape-radius: 50%;
+    --shape-width: 25%;
+    --shape-height: 13%;
+}
+
+.head .lip {
+    --shape-rotate: 0deg;
+    --shape-x: 14%;
+    --shape-y: 41%;
+    --shape-radius: 50%;
+    --shape-width: 11%;
+    --shape-height: 11%;
+}
+
+.head .ear {
+    --shape-width: 21%;
+    --shape-height: 20%;
+    --shape-y: 23%;
+    --shape-x: 55%;
+    --shape-radius: 30% 10% 100% 30%;
+    --shape-rotate: -12deg;
+    --shape-origin: 0% 50%;
+}
+
+.head .ear::before {
+    content: '';
+    --shape-width: 118%;
+    --shape-height: 87%;
+    --shape-y: -5%;
+    --shape-x: -29%;
+    --shape-radius: 30% 10% 100% 30%;
+    --shape-rotate: 32deg;
+    --shape-origin: 0% 50%;
+}
+
+.head .extend {
+    --shape-width: 53%;
+    --shape-height: 43%;
+    --shape-y: 19%;
+    --shape-x: 44%;
+    --shape-radius: 50% 50% 50% 50%;
+    --shape-rotate: 24deg;
+    --shape-origin: 0% 50%;
+}
+
+/* ================
+
+   ANIMATIONS
+
+   ================ */
+
+/* @keyframes body {
+	0%,
+	100% {
+		transform: rotate(8deg) translatex(2%) translatey(-5%);
+	}
+	9% {
+		transform: rotate(4deg) translatex(2%) translatey(0%);
+	}
+	18.1% {
+		transform: rotate(1deg) translatex(0%) translatey(5%);
+	}
+	27.2% {
+		transform: rotate(1deg) translatex(2%) translatey(0%) scaleX(0.92);
+	}
+	36.3% {
+		transform: rotate(0deg) translatex(2%) translatey(-2%) scaleX(0.9);
+	}
+	45.4% {
+		transform: rotate(2deg) translatex(2%) translatey(-3%) scaleX(0.9);
+	}
+	54.5% {
+		transform: rotate(3deg) translatex(2%) translatey(-5%) scaleX(0.9);
+	}
+	63.6% {
+		transform: rotate(4deg) translatex(0%) translatey(-4%) scaleX(0.9);
+	}
+	72.7% {
+		transform: rotate(4.5deg) translatex(0%) translatey(-3%) scaleX(0.95);
+	}
+	81.8% {
+		transform: rotate(6.5deg) translatex(0%) translatey(-5%) scaleX(0.95);
+	}
+	90.9% {
+		transform: rotate(10deg) translatex(0%) translatey(-14%) scaleX(1);
+	}
+}
+
+.animate .body {
+	animation: body 20s linear infinite;
+} */
+
+/* @keyframes front-shoulder {
+	0%,
+	100% {
+		transform: rotate(20deg) translatex(0%) translatey(6%);
+	}
+	8.3% {
+		transform: rotate(8deg) translatex(-10%) translatey(0%);
+	}
+	16.6% {
+		transform: rotate(0deg) translatex(-12%) translatey(-3%);
+	}
+	24.9% {
+		transform: rotate(0deg) translatex(10%) translatey(0%);
+	}
+	33.3% {
+		transform: rotate(-30deg) translatex(7%) translatey(-12%);
+	}
+	41.6% {
+		transform: rotate(-30deg) translatex(11%) translatey(-10%);
+	}
+	49.9% {
+		transform: rotate(-20deg) translatex(10%) translatey(0%);
+	}
+	58.3% {
+		transform: rotate(-10deg) translatex(30%) translatey(-5%);
+	}
+	66.6% {
+		transform: rotate(15deg) translatex(25%) translatey(5%);
+	}
+	74.9% {
+		transform: rotate(0deg) translatex(0%) translatey(0%);
+	}
+	83.3% {
+		transform: rotate(0deg) translatex(0%) translatey(0%);
+	}
+	91.6% {
+		transform: rotate(20deg) translatex(0%) translatey(0%);
+	}
+}
+
+.animate .front-leg .upper {
+	animation: front-shoulder 20s linear infinite;
+} */
