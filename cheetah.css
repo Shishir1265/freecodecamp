@@ -905,7 +905,7 @@ body {
 
 @keyframes front-upper {
     0%,100% {
-        transform: rotate(-67deg) translateX(8%) translateY(11%);
+        transform: rotate(-67deg) translateX(8%) translateY(42%);
     }
     25% {
         transform: rotate(-45deg) translateX(0%) translateY(26%);
