@@ -155,19 +155,17 @@ body {
 
 .front-leg .shoulder {
     --shape-x: 8%;
-    --shape-width: 77%;
+    --shape-width: 71%;
     --shape-height: 15%;
     --shape-origin: 100% 50%;
-    --shape-radius: 30% 30% 69% 10%;
+    --shape-radius: 30% 30% 69% 32%;
     --shape-rotate: -0deg;
-    background: transparent;
-    border: none;
 }
 
 .front-leg .upper {
     --shape-x: 30%;
     --shape-y: 77%;
-    --shape-width: 29%;
+    --shape-width: 32%;
     --shape-height: 180%;
     --shape-origin: 50% 0%;
     --shape-radius: 30% 30% 50% 100%;
@@ -272,21 +270,37 @@ body {
 
 .front-leg.left {
 
+    .shoulder {
+        --shape-x: 16%;
+    }
+
     .upper {
-        --shape-rotate: -121deg;
+        --shape-x: 8%;
+        --shape-y: 42%;
+        --shape-rotate: -67deg;
+        border: .2px solid red;
+
+        &::before {
+            --shape-radius: 20% 50% 20% 20%;
+            border: .2px solid red;
+        }
     }
 
     .knee {
-        --shape-rotate: 114deg;
+        --shape-rotate: 72deg;
+        --shape-x: 47%;
+        --shape-y: 72%;
+        --shape-width: 121%;
+        --shape-height: 53%;
     }
 
     .lower {
-        --shape-height: 222%;
-        --shape-width: 48%;
+        --shape-height: 225%;
+        --shape-width: 45%;
     }
 
     .ankle {
-        --shape-rotate: -89deg;
+        --shape-height: 24%;
     }
 }
 
@@ -295,16 +309,17 @@ body {
     --delay: calc(0s - var(--speed) / var(--delay-gap));
 
     .shoulder {
-        --shape-x: -1%;
-        --shape-width: 71%;
-        --shape-height: 16%;
+        background: transparent;
+        border: none;
     }
 
     .upper {
-        --shape-rotate: -61deg;
-        --shape-y: 71%;
+        --shape-x: 36%;
+        --shape-y: 77%;
+        --shape-rotate: -4deg;
     }
 
+    /*
     .knee {
         --shape-x: 33%;
         --shape-rotate: 65deg;
@@ -320,7 +335,7 @@ body {
 
     .much-lower::before {
         --shape-y: -104%;
-    }
+    } */
 }
 
 /* ================
@@ -454,14 +469,14 @@ body {
 .back-leg.right {
     --color-horse: var(--color-horse-back);
     --delay: calc(0s - var(--speed) / var(--delay-gap));
-    --part-rotate: -61deg;
+    --part-rotate: -70deg;
 
     .top {
-        --shape-y: 2%;
-        --shape-x: 9%;
-        --shape-rotate: 52deg;
+        --shape-y: 6%;
+        --shape-x: 10%;
     }
 
+    /*
     .foot::before {
         --shape-x: -13%;
         --shape-y: 5%;
@@ -478,7 +493,7 @@ body {
         --shape-rotate: -8deg;
         --shape-x: -18%;
         --shape-y: 73%;
-    }
+    } */
 
 }
 
@@ -672,7 +687,7 @@ body {
     --shape-width: 63%;
     --shape-height: 34%;
     --shape-radius: 50%/20%;
-    --shape-y: 39%;
+    --shape-y: 44%;
     --shape-x: 24%;
     --shape-rotate: 22deg;
     border-bottom-left-radius: 52%;
@@ -708,7 +723,7 @@ body {
     --part-width: 17%;
     --part-height: 21%;
     --part-x: 17.6%;
-    --part-y: 31%;
+    --part-y: 32%;
     --part-origin: 100% 50%;
     --part-rotate: -25deg;
     border: none;
@@ -793,7 +808,7 @@ body {
 .head .extend {
     --shape-width: 53%;
     --shape-height: 43%;
-    --shape-y: 19%;
+    --shape-y: 31%;
     --shape-x: 44%;
     --shape-radius: 50% 50% 50% 50%;
     --shape-rotate: 24deg;
@@ -886,7 +901,61 @@ body {
 		transform: rotate(20deg) translatex(0%) translatey(0%);
 	}
 }
+*/
 
-.animate .front-leg .upper {
-	animation: front-shoulder 20s linear infinite;
-} */
+@keyframes front-upper {
+    0%,100% {
+        transform: rotate(-67deg) translateX(8%) translateY(11%);
+    }
+    25% {
+        transform: rotate(-45deg) translateX(0%) translateY(26%);
+    }
+    50% {
+        transform: rotate(-73deg) translateX(9%) translateY(23%);
+    }
+    75% {
+        transform: rotate(-73deg) translateX(-17%) translateY(23%);
+    }
+}
+
+.front-leg.left .upper {
+	animation: front-upper 5s linear infinite;
+}  
+/*
+@keyframes front-shoulder {
+    0%,100% {
+        transform: rotate(0) translateX(16%) translateY(1%);
+    }
+    25% {
+        transform: rotate(0) translateX(16%) translateY(1%);
+    }
+    50% {
+        transform: rotate(-1deg) translateX(16%) translateY(1%);
+    }
+    75% {
+        transform: rotate(-1deg) translateX(16%) translateY(1%);
+    }
+}
+
+.animate .front-leg.left .shoulder {
+	animation: front-shoulder 5s linear infinite;
+}  
+
+@keyframes front-knee {
+    0%,100% {
+        transform: rotate(72deg) translateX(47%) translateY(72%);
+    }
+    25% {
+        transform: rotate(4deg) translateX(31%) translateY(72%);
+    }
+    50% {
+        transform: rotate(-60deg) translateX(31%) translateY(72%);
+    }
+    75% {
+        transform: rotate(72deg) translateX(31%) translateY(72%);
+    }
+}
+
+.animate .front-leg.left .knee {
+	animation: front-knee 5s linear infinite;
+}  
