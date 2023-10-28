@@ -1,3 +1,347 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
+
 * {
     user-select: none;
+}
+
+body {
+    overflow: hidden;
+    background-color: black;
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
+
+    .logo {
+        color: white;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 100;
+        letter-spacing: 4px;
+    }
+
+    label {
+
+        cursor: pointer;
+
+        &.mercury .preview {
+            background-image: url("https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg") !important;
+        }
+
+        &.venus>.preview {
+            background-image: url("https://nasa3d.arc.nasa.gov/shared_assets/images/ven0aaa2/ven0aaa2-copy-428-321.jpg") !important;
+        }
+
+        &.earth>.preview {
+            background-image: url("https://img00.deviantart.net/04ef/i/2009/114/3/e/new_earth_texture_map_by_lightondesigns.jpg") !important;
+        }
+
+        &.mars>.preview {
+            background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mars_texture.jpg") !important;
+        }
+
+        &.jupiter>.preview {
+            background-image: url("https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA07782_hires.jpg") !important;
+        }
+
+        &.saturn>.preview {
+            background-image: url("https://www.solarsystemscope.com/images/textures/full/2k_saturn.jpg") !important;
+        }
+
+        &.uranus>.preview {
+            background-image: url("https://img00.deviantart.net/957c/i/2017/165/4/9/uranus_texture_map_by_jcpag2010-db7yjwb.png") !important;
+        }
+
+        &.neptune>.preview {
+            background-image: url("https://img00.deviantart.net/f068/i/2017/165/b/c/neptune_texture_map_by_jcpag2010-dbcjcv5.png") !important;
+        }
+
+        &.pluto>.preview {
+            background-image: url("https://pre00.deviantart.net/4677/th/pre/f/2015/314/4/e/pluto_map__2015_nov_10__by_snowfall_the_cat-d918tlb.png") !important;
+        }
+
+        &.menu {
+            color: white;
+            display: block;
+            position: absolute;
+            cursor: pointer;
+            left: 90px;
+            z-index: 2;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 12px;
+                height: 12px;
+                border: 2px solid white;
+                border-radius: 60px;
+                z-index: 2;
+                top: -4px;
+                left: -4px;
+            }
+
+            &:hover h2,
+            &:hover h3 {
+                opacity: 1;
+            }
+
+            &.mercury h2 .data {
+                background: #E8927C;
+            }
+
+            &.venus h2 .data {
+                background: #b45d15;
+            }
+
+            &.earth h2 .data {
+                background: #26daaa;
+            }
+
+            &.mars h2 .data {
+                background: #e55f45;
+            }
+
+            &.jupiter h2 .data {
+                background: orange;
+            }
+
+            &.saturn h2 .data {
+                background: #b29d81;
+            }
+
+            &.uranus h2 .data {
+                background: #8dcdd8;
+            }
+
+            &.neptune h2 .data {
+                background: #4f83e2;
+            }
+
+            &.pluto h2 .data {
+                background: #FF8732;
+            }
+
+            .info {
+                position: relative;
+                left: 50px;
+                top: 1px;
+            }
+
+            h2,
+            h3 {
+                text-transform: uppercase;
+                margin: 0;
+                font-weight: 100;
+                letter-spacing: 2px;
+            }
+
+            h2 {
+                font-size: 11px;
+                opacity: 0.4;
+                margin-bottom: 4px;
+            }
+
+            h3 {
+                font-size: 8px;
+                letter-spacing: 1px;
+                transition: all 0.3s;
+                opacity: 0.3;
+            }
+
+            .data {
+                width: 0;
+                height: 9px;
+                background: #fea082;
+                float: left;
+                position: relative;
+                top: 3px;
+                transition: all 0.3s;
+                margin-right: 0px;
+            }
+
+            &:nth-of-type(1) {
+                top: calc(50vh + 100px + ((14px + 34px) * 1) + 0px - 369px);
+            }
+
+            &:nth-of-type(2) {
+                top: calc(50vh + 100px + ((14px + 34px) * 2) + 0px - 369px);
+            }
+
+            &:nth-of-type(3) {
+                top: calc(50vh + 100px + ((14px + 34px) * 3) + 0px - 369px);
+            }
+
+            &:nth-of-type(4) {
+                top: calc(50vh + 100px + ((14px + 34px) * 4) + 0px - 369px);
+            }
+
+            &:nth-of-type(5) {
+                top: calc(50vh + 100px + ((14px + 34px) * 5) + 0px - 369px);
+            }
+
+            &:nth-of-type(6) {
+                top: calc(50vh + 100px + ((14px + 34px) * 6) + 0px - 369px);
+            }
+
+            &:nth-of-type(7) {
+                top: calc(50vh + 100px + ((14px + 34px) * 7) + 0px - 369px);
+            }
+
+            &:nth-of-type(8) {
+                top: calc(50vh + 100px + ((14px + 34px) * 8) + 0px - 369px);
+            }
+
+            &:nth-of-type(9) {
+                top: calc(50vh + 100px + ((14px + 34px) * 9) + 0px - 369px);
+            }
+            
+            .preview {
+                width: 30px;
+                height: 30px;
+                float: left;
+                background-size: auto 100%;
+                position: absolute;
+                box-shadow: 0 -13px 10px 2px black inset;
+            }
+        }
+    }
+
+    .overlay {
+        border-bottom: 1020px solid black;
+        width: 1800px;
+        height: 620px;
+        top: auto;
+        transform: none;
+        top: -240px;
+        left: -303px;
+        opacity: 1;
+        border-radius: 100%;
+        z-index: 0;
+        box-shadow: 0px -190px 215px 110px black inset;
+    }
+
+
+    .solar {
+        position: absolute;
+        transform: rotateX(-20deg);
+        perspective: 800px;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+    }
+
+    .solar-system {
+
+        transform-style: preserve-3d;
+        position: absolute;
+        height: 100%;
+        pointer-events: none;
+        left: 0;
+        right: 0;
+
+        .planet {
+            height: 1200px;
+            width: 1200px;
+            border-radius: 50%;
+            transition: transform 2.8s 0.23s cubic-bezier(0.33, 0, 0, 1), opacity 2s 0.8s, box-shadow 0s 0s;
+            background-size: 1140px 910px;
+            top: auto;
+            bottom: -920px;
+
+            .moon {
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+                position: absolute;
+                text-align: center;
+                color: aquamarine;
+                text-transform: uppercase;
+                opacity: 0;
+                transition: all 0.6s 0.2s;
+
+                h2 {
+                    font-weight: 100;
+                    font-size: 40px;
+                    letter-spacing: 2.5px;
+                    margin: 0;
+                    position: relative;
+                    top: -120px;
+                }
+
+                h3 {
+                    font-weight: 100;
+                    font-size: 20px;
+                    letter-spacing: 2.5px;
+                    color: #fea082;
+                    margin: 0;
+                    position: relative;
+                    top: -120px;
+                }
+            }
+        }
+    }
+
+    .solar-system .planet,
+    input[name=planet][type=radio]::after,
+    .overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: auto;
+    }
+
+    input[type=radio][name=planet] {
+        appearance: none;
+
+        &::after {
+            content: "";
+        }
+
+        .planet1:checked::after {
+            display: none;
+        }
+
+        .planet1:checked+label+input::after {
+            display: none;
+        }
+
+        .planet1:checked+label+div .solar-system:nth-of-type(1) {
+            pointer-events: all;
+        }
+
+        .planet1:checked+label+div .solar-system:nth-of-type(1) .planet {
+            transform: translateZ(0px) translateY(0) rotatex(4deg) scaleX(0.89);
+            opacity: 2;
+            -webkit-animation: planet 60s 3.9s infinite linear;
+            animation: planet 60s 3.9s infinite linear;
+        }
+
+        .planet1:checked+label+div .solar-system:nth-of-type(1) .planet_description {
+            opacity: 1;
+            transition: all 0.6s 2.6s;
+        }
+
+        .planet1:checked+label+div .solar-system:nth-of-type(1) .planet_description h2,
+        input[type=radio][name=planet].planet1:checked+label+div .solar-system:nth-of-type(1) .planet_description h1 {
+            position: relative;
+            top: 0px;
+            transition: all 0.5s 3s;
+        }
+    }
+}
+
+@keyframes planet {
+    from {
+        background-position-y: 0px;
+    }
+
+    to {
+        background-position-y: -1000px;
+    }
 }
